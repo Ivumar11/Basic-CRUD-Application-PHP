@@ -51,7 +51,7 @@
     } else {
 ?>
     <form class="form" method="post">
-        <h1 class="title">Reset</h1>
+        <h1 class="form-title">Reset</h1>
         <input type="text" class="input" name="user_name" placeholder="Username" Required/>
         <input type="password" class="input" name="new_password" placeholder="New Password" Required/>
         <input type="password" class="input" name="confirm_password" placeholder="Confirm Password" Required/>

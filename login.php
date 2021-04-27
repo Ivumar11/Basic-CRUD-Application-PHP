@@ -21,6 +21,10 @@
                      AND pass_word='".md5($pass_word)."'";
         $result = $conn->query($sql);
         if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['user_name'] = $user_name;
             // Redirect to user dashboard page
             header("Location: dashboard.php");
@@ -33,7 +37,7 @@
     } else {
 ?>
     <form class="form" method="post">
-        <h1 class="title">Login</h1>
+        <h1 class="form-title">Login</h1>
         <input type="text" class="input" name="user_name" placeholder="Username" Required/>
         <input type="password" class="input" name="pass_word" placeholder="Password" Required/>
         <input type="submit" value="Login" name="submit" class="button"/>
