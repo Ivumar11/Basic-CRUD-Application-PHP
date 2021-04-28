@@ -52,7 +52,7 @@ include("auth_session.php");
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.php">
+                    <a href="logout.php">
                         <span class="ti-time"></span>
                         <span>Logout</span>
                     </a>
