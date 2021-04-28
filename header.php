@@ -20,7 +20,7 @@ include("auth_session.php");
         <div class="sidebar-header">
             <h3 class="brand">
                 <span class="ti-unlink"></span> 
-                <span>easywire</span>
+                <span>Zuri CRUD app</span>
             </h3> 
             <label for="sidebar-toggle" class="ti-menu-alt"></label>
         </div>
@@ -28,7 +28,7 @@ include("auth_session.php");
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="">
+                    <a href="dashboard.php">
                         <span class="ti-home"></span>
                         <span>Home</span>
                     </a>
@@ -46,13 +46,13 @@ include("auth_session.php");
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="dashboard.php">
                         <span class="ti-settings"></span>
                         <span>Account</span>
                     </a>
                 </li>
                 <li>
-                    <a href="logout.php">
+                    <a href="dashboard.php">
                         <span class="ti-time"></span>
                         <span>Logout</span>
                     </a>
@@ -72,7 +72,11 @@ include("auth_session.php");
             
             <div class="social-icons">
                 <span><h3 class="dash-title"><?php echo "Welcome, " . $_SESSION['first_name'];?></h3></span>
-                <span class="ti-bell"></span>
+                <span><a href="add_course.php">
+                <button class="button" style="border-radius:10px; padding: 10px; background:#027581;">
+                ADD COURSE
+                </button>
+                </a></span>
                 <span class="ti-comment"></span>
                 <div></div>
             </div>
