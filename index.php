@@ -1,52 +1,146 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Registration</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
 <?php
-    require('database.php');
-    // When form submitted, insert values into the database.
-    if (isset($_REQUEST['user_name'])) {
-        // removes backslashes
-        $first_name = trim(stripslashes($_REQUEST['first_name']));
-        //escapes special characters in a string
-        $first_name = $conn->real_escape_string($first_name);
-        $last_name = trim(stripslashes($_REQUEST['last_name']));
-        $last_name = $conn->real_escape_string($last_name);
-        $user_name = trim(stripslashes($_REQUEST['user_name']));
-        $user_name = $conn->real_escape_string($user_name);
-        $pass_word = trim(stripslashes($_REQUEST['pass_word']));
-        $pass_word = $conn->real_escape_string($pass_word);
-        $sql    = "INSERT into users (first_name, last_name, user_name, pass_word)
-                     VALUES ('$first_name', '$last_name', '$user_name', '".md5($pass_word)."')";
+include("header.php");
+?>
         
-        if ($conn->query($sql) === TRUE) {
-            echo "<div class='form'>
-            <h3>You are registered successfully.</h3><br/>
-            <p class='link'>Click <a href='login.php'>here to Login</a></p>
-            </div>";
-          } else {
-            echo "<div class='form'>
-            <h3>Required fields are missing.</h3><br/>
-            <p class='link'>Click here to <a href='index.php'>register</a> again.</p>
-            </div>";
-        }
-    } else {
-?>
-    <form class="form" action="" method="post">
-        <h1 class="form-title">Registration</h1>
-        <input type="text" class="input" name="first_name" placeholder="First Name" required />
-        <input type="text" class="input" name="last_name" placeholder="Last Name" required />
-        <input type="text" class="input" name="user_name" placeholder="Username" required />
-        <input type="password" class="input" name="pass_word" placeholder="Password" required>
-        <input type="submit" name="submit" value="Register" class="button">
-        <p class="link">Already have an account? <a href="login.php">Click here to Login</a></p>
-    </form>
-<?php
-    }
-?>
+        <main>
+            
+            <h2 class="dash-title">Overview</h2>
+            
+            <section class="recent">
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h3>Recent activity</h3>
+                        
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Project</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Team</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>App Development</td>
+                                        <td>15 Aug, 2020</td>
+                                        <td>22 Aug, 2020</td>
+                                        <td class="td-team">
+                                            <div class="img-1"></div>
+                                            <div class="img-2"></div>
+                                            <div class="img-3"></div>
+                                        </td>
+                                        <td>
+                                            <span class="badge success">Success</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Logo Design</td>
+                                        <td>15 Aug, 2020</td>
+                                        <td>22 Aug, 2020</td>
+                                        <td class="td-team">
+                                            <div class="img-1"></div>
+                                            <div class="img-2"></div>
+                                            <div class="img-3"></div>
+                                        </td>
+                                        <td>
+                                            <span class="badge warning">Processing</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Server setup</td>
+                                        <td>15 Aug, 2020</td>
+                                        <td>22 Aug, 2020</td>
+                                        <td class="td-team">
+                                            <div class="img-1"></div>
+                                            <div class="img-2"></div>
+                                            <div class="img-3"></div>
+                                        </td>
+                                        <td>
+                                            <span class="badge success">Success</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Front-end Design</td>
+                                        <td>15 Aug, 2020</td>
+                                        <td>22 Aug, 2020</td>
+                                        <td class="td-team">
+                                            <div class="img-1"></div>
+                                            <div class="img-2"></div>
+                                            <div class="img-3"></div>
+                                        </td>
+                                        <td>
+                                            <span class="badge warning">Processing</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Web Development</td>
+                                        <td>15 Aug, 2020</td>
+                                        <td>22 Aug, 2020</td>
+                                        <td class="td-team">
+                                            <div class="img-1"></div>
+                                            <div class="img-2"></div>
+                                            <div class="img-3"></div>
+                                        </td>
+                                        <td>
+                                            <span class="badge success">Success</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="summary">
+                        <div class="summary-card">
+                            <div class="summary-single">
+                                <span class="ti-id-badge"></span>
+                                <div>
+                                    <h5>196</h5>
+                                    <small>Number of staff</small>
+                                </div>
+                            </div>
+                            <div class="summary-single">
+                                <span class="ti-calendar"></span>
+                                <div>
+                                    <h5>16</h5>
+                                    <small>Number of leave</small>
+                                </div>
+                            </div>
+                            <div class="summary-single">
+                                <span class="ti-face-smile"></span>
+                                <div>
+                                    <h5>12</h5>
+                                    <small>Profile update request</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bday-card">
+                            <div class="bday-flex">
+                                <div class="bday-img"></div>
+                                <div class="bday-info">
+                                    <h5>Dwayne F. Sanders</h5>
+                                    <small>Birthday Today</small>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button>
+                                    <span class="ti-gift"></span>
+                                    Wish him
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+    </div>
+    
 </body>
 </html>
