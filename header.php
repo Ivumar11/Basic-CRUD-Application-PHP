@@ -28,7 +28,7 @@ include("auth_session.php");
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="dashboard.php">
+                    <a href="index.php">
                         <span class="ti-home"></span>
                         <span>Home</span>
                     </a>
@@ -46,7 +46,7 @@ include("auth_session.php");
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.php">
+                    <a href="index.php">
                         <span class="ti-settings"></span>
                         <span>Account</span>
                     </a>

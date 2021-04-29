@@ -25,7 +25,7 @@ if (isset($_POST['add'])) {
     } else {
         echo "<div class='form'>
         <h3>Something went wrong.</h3><br/>
-        <p class='link'><a href='add_course.php'>Try again</a> or <a href='dashboard.php'>Go back to dashboard</a>.</p>
+        <p class='link'><a href='add_course.php'>Try again</a> or <a href='index.php'>Go back to dashboard</a>.</p>
         </div>";
     }
 
@@ -37,7 +37,7 @@ if (isset($_POST['add'])) {
         <input type="text" class="input" name="course_code" placeholder="Course code" Required/>
         <input type="text" class="input" name="course_title" placeholder="Course title" Required/>
         <input type="submit" value="Add course" name="add" class="button"/>
-        <p class="link"><a href="dashboard.php">Click here to go back</a></p>
+        <p class="link"><a href="index.php">Click here to go back</a></p>
   </form>
 <?php
 } ?>

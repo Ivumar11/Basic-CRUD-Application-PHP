@@ -56,7 +56,7 @@
         <input type="password" class="input" name="new_password" placeholder="New Password" Required/>
         <input type="password" class="input" name="confirm_password" placeholder="Confirm Password" Required/>
         <input type="submit" value="Reset" name="submit" class="button"/>
-        <p class="link">Don't have an account? <a href="index.php">Register here</a></p>
+        <p class="link">Don't have an account? <a href="register.php">Register here</a></p>
   </form>
 <?php
     }

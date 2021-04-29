@@ -31,7 +31,7 @@
           } else {
             echo "<div class='form'>
             <h3>Required fields are missing.</h3><br/>
-            <p class='link'>Click here to <a href='index.php'>register</a> again.</p>
+            <p class='link'>Click here to <a href='register.php'>register</a> again.</p>
             </div>";
         }
     } else {

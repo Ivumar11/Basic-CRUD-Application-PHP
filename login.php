@@ -27,7 +27,7 @@
             $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['user_name'] = $user_name;
             // Redirect to user dashboard page
-            header("Location: dashboard.php");
+            header("Location: index.php");
         } else {
             echo "<div class='form'>
                   <h3>Incorrect Username/password.</h3><br/>
@@ -41,7 +41,7 @@
         <input type="text" class="input" name="user_name" placeholder="Username" Required/>
         <input type="password" class="input" name="pass_word" placeholder="Password" Required/>
         <input type="submit" value="Login" name="submit" class="button"/>
-        <p class="link">Don't have an account? <a href="index.php">Register here</a></p>
+        <p class="link">Don't have an account? <a href="register.php">Register here</a></p>
         <p class="link">Forgot password? <a href="reset.php">Reset here</a></p>
   </form>
 <?php
