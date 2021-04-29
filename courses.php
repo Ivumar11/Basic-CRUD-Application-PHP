@@ -10,6 +10,20 @@ if (isset($_GET['del'])) {
         echo "An error occured";
     }
 }
+if (isset($_POST['edit'])) {
+    $reg_id = $_POST['reg_id'];
+    $course_code = $_POST['course_code'];
+    $course_title = $_POST['course_title'];
+
+    $sql = "UPDATE courses SET course_code='$course_code', course_title='$course_title' WHERE reg_id ='$reg_id'";
+    $result = $conn->query($sql);
+    if ($result === TRUE) {
+        echo "yes!!";
+    } else {
+        echo "Something went wrong";
+    }
+}
+
 ?>
         
         <main>
@@ -41,8 +55,8 @@ if (isset($_GET['del'])) {
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="edit.php?edit='<?php echo $row["reg_id"];?>">Edit course</a>
-                        <a href="courses.php?del='<?php echo $row["reg_id"];?>'" style="float: right;">Delete</a>
+                        <a href="edit.php?edit=<?php echo $row["reg_id"];?>">Edit course</a>
+                        <a href="courses.php?del=<?php echo $row["reg_id"];?>" style="float: right;">Delete</a>
                     </div>
                 </div>
                 <?php
