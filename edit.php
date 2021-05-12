@@ -34,7 +34,7 @@ if (isset($_GET['edit'])) {
                 <input type="text" class="input" name="course_code" value="<?php echo $course_code; ?>"/>
                 <input type="text" class="input" name="course_title" value="<?php echo $course_title; ?>"/>
                 <input type="submit" value="Update" name="edit" class="button"/>
-                <p class="link"><a href="index.php">Click here to cancel</a></p>
+                <p class="link"><a href="courses.php">Click here to cancel</a></p>
         </form>
     </div>
     
